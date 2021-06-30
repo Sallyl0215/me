@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+I am still not familiar with all the functions using in python. I really appreciate those videos explain each steps to solve the exercises. I also spent lot of time to understand how it works. I think after this lesson, I am more familiar with the .append and totally clear with functions of different brackets. The only thing that is still unclear is I can't find the best way to solve a problem, or hard to think of a correct way, there is always some mistakes. I need to practice more.

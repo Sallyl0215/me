@@ -1,34 +1,34 @@
 {
     "architecture": [
         "64bit",
-        ""
+        "WindowsPE"
     ],
-    "machine": "x86_64",
-    "os_name": "posix",
-    "platform": "macOS-10.16-x86_64-i386-64bit",
-    "processor": "i386",
-    "release": "20.1.0",
-    "system": "Darwin",
+    "machine": "AMD64",
+    "os_name": "nt",
+    "platform": "Windows-10-10.0.22000-SP0",
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "release": "10",
+    "system": "Windows",
     "uname": [
-        "Darwin",
-        "Sallys-MacBook-Air.local",
-        "20.1.0",
-        "Darwin Kernel Version 20.1.0: Sat Oct 31 00:07:10 PDT 2020; root:xnu-7195.50.7~2/RELEASE_ARM64_T8101",
-        "x86_64",
-        "i386"
+        "Windows",
+        "MSI",
+        "10",
+        "10.0.22000",
+        "AMD64",
+        "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel"
     ],
-    "version": "Darwin Kernel Version 20.1.0: Sat Oct 31 00:07:10 PDT 2020; root:xnu-7195.50.7~2/RELEASE_ARM64_T8101",
+    "version": "10.0.22000",
     "python_build": [
-        "default",
-        "Apr 13 2021 12:59:45"
+        "tags/v3.10.4:9d38120",
+        "Mar 23 2022 23:13:41"
     ],
-    "python_compiler": "Clang 10.0.0 ",
+    "python_compiler": "MSC v.1929 64 bit (AMD64)",
     "python_implementation(": "CPython",
-    "python_version(": "3.8.8",
+    "python_version(": "3.10.4",
     "python_version_tuple": [
         "3",
-        "8",
-        "8"
+        "10",
+        "4"
     ],
     "cpu_count": 8
 }

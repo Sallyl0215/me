@@ -51,14 +51,31 @@ def wordy_pyramid():
 
 
 def get_a_word_of_length_n(length):
-    pass
+     length = int(length)
+        if length > 0:
+            wordlist["word"] = "b" * length
+            word = wordlist['word']
+            return word
+        else:
+            pass
+    except Exception:
+        pass
 
 
 def list_of_words_with_lengths(list_of_lengths):
-    pass
-
+     length = len(list_of_lengths)
+    words_list = {}
+    word_list = []
+    for i in range(length):
+        a = list_of_lengths[i]
+        words_list['word'] = 'a' * a
+        word_list.append(words_list['word'])
+    return word_list
+    
 
 if __name__ == "__main__":
     pyramid = wordy_pyramid()
     for word in pyramid:
         print(word)
+
+

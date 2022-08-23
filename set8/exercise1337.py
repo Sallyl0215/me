@@ -15,49 +15,52 @@ from typing import Dict, List
 
 
 def give_me_five() -> int:
-    """Returns the integer five."""
-    return 5
+    give_me= 5
+    return give_me
 
 
 def password_please() -> str:
-    """Returns a string, 8 or more characters long, contains at
-    least one upper case letter and one lowercase letter.
-    TIP: don't put in a real password!"""
-    return "LearningPython"
+   password_p= "LearningPython"
+
+    return password_p
 
 
 def list_please() -> list:
-    """Returns a list, you can put anything in the list."""
-    return ["python", "class"]
+    list_p=["python", "class"]
+    return list_p
 
 
 def int_list_please() -> list:
-    """Returns a list of integers, any integers are fine."""
-    return [5, 6, 7]
+    int_list = [5, 6, 7]
+    return int_list
 
 
 def string_list_please() -> list:
-    """Returns a list of strings, any string are fine."""
-    return ["This is working"]
+    string_list= ["This is working"]
+    return string_list
 
 
 def dictionary_please() -> dict:
-    """Returns a dictionary, anything you like."""
-    return {"Hello":"world"}
+    dictionary_p= {"Hello":"world"}
+    return dictionary_p
 
 
 def is_it_5(some_number) -> bool:
     """Returns True if the argument passed is 5, otherwise returns False."""
     
-    some_number == 5
-
-    return some_number == 5
+    some_number = int(some_number)
+        if some_number >= 5:
+            well_is_it = True
+        else:
+            well_is_it = False
+    
+    return well_is_it
     
 
 
 def take_five(some_number) -> int:
-    """Subtracts 5 from some_number."""
-    return None
+     x = some_number - 5
+    return x
 
 
 def greet(name="Towering Timmy") -> str:
@@ -66,7 +69,9 @@ def greet(name="Towering Timmy") -> str:
     E.g. if given as "Towering Timmy" it should
          return "Well hello, Towering Timmy"
     """
-    return None
+    greet = "Well Hello" + "," +"Towering Timmy" 
+    return greet
+
 
 
 def one_counter(input_list=[1, 4, 1, 5, 1, 1]) -> int:
@@ -74,8 +79,8 @@ def one_counter(input_list=[1, 4, 1, 5, 1, 1]) -> int:
     Return an integer.
     TIP: the test will use a different input_list, so don't just return 2
     """
-    count = None
-
+    count = 0
+    count = input_list.count(0)
     return count
 
 
@@ -83,10 +88,9 @@ def n_counter(search_for_this, input_list=[1, 4, 1, 5, 1, 1]) -> int:
     """Count the number of times search_for_this shows up in the input_list.
     Return an integer.
     """
-    count = None
-
+    count = 0
+    count = input_list.count(search_for_this)
     return count
-
 
 def fizz_buzz() -> List:
     """Do the fizzBuzz.
@@ -108,6 +112,18 @@ def fizz_buzz() -> List:
     """
     fizz_buzz_list = []
     # your code here
+    for i in range(1, 101, 1):
+        if i % 3==0 and i % 5==0:
+            x = "FizzBuzz"
+            fizzBuzzList.append(x)
+        elif i % 3 == 0:
+            x = "Fizz"
+            fizzBuzzList.append(x)
+        elif i % 5 == 0:
+            x = "Buzz"
+            fizzBuzzList.append(x)
+        else:
+            fizzBuzzList.append(i)
 
     return fizz_buzz_list
 
@@ -123,8 +139,10 @@ def set_it_on_fire(input_string="very naughty boy") -> str:
     TIP: consider using the 'join' method in Python.
     TIP: make sure that you have a 🔥 on both ends of the string.
     """
-
-    return None
+    split1 = list(input_string)
+    x = "🔥".join(split1)
+    y = "🔥" + x + "🔥"
+    return y
 
 
 def pet_filter(letter="a") -> List:
@@ -143,6 +161,10 @@ def pet_filter(letter="a") -> List:
     # fmt: on
     filtered = []
 
+    for i in range(len(pets)):
+        if letter in list(pets[i]):
+            filtered.append(pets[i])
+    
     return filtered
 
 
@@ -156,10 +178,15 @@ def best_letter_for_pets() -> str:
     """
     import string
 
+    i = -1
     the_alphabet = string.ascii_lowercase
-    most_popular_letter = ""
-
-    return most_popular_letter
+    letters = list(the_alphabet)
+    for a in range(len(the_alphabet)):
+        nletter = len(pet_filter(letter= letters[a]))
+        if nletter > i:
+            i = nletter
+            popular_letter = letters[a]
+    return popular_letter
 
 
 def make_filler_text_dictionary() -> Dict:
@@ -189,6 +216,12 @@ def make_filler_text_dictionary() -> Dict:
 
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
     wd = {}
+    for i in range(3,8,1):
+        urln = url + str(i)
+        wd[i] = []
+        for a in range(3):
+            r = requests.get(urln).text
+            wd[i].append(r)
 
     return wd
 
@@ -207,6 +240,11 @@ def random_filler_text(number_of_words=200) -> str:
     my_dict = make_filler_text_dictionary()
 
     words = []
+    my_dict = make_filler_text_dictionary()
+    for i in range(number_of_words):
+        keyindex = (random.randint(3,7))
+        listindex = (random.randint(0,2))
+        words.append(my_dict[keyindex][listindex])
 
     return " ".join(words)
 
@@ -225,6 +263,10 @@ def fast_filler(number_of_words=200) -> str:
     it'll convert integer keys to strings.
     If you get this one to work, you are a Very Good Programmer™!
     """
+
+    import random
+    import os
+    import json
 
     fname = "dict_cache.json"
 

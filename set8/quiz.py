@@ -10,29 +10,33 @@ import time
 
 
 def string_please() -> str:
-    """Returns a string, anything you like."""
-    return "I'm a string!"
+    string_please= "I'm a string!"
+    return string_please
 
 
 def list_please() -> list:
-    """Returns a list, anything you like."""
-    return [None, None]
+    list_please= ["yo", "hi"]
+    return list_please
 
 
 def dictionary_please() -> dict:
-    """Returns a dictionary, anything you like."""
-    return {"jelly": None}
+    Dic1 = {}
+    return Dic1
 
 
 def is_it_5(some_number) -> bool:
     """Returns True if the argument passed is 5, otherwise returns False."""
-    well_is_it = some_number == 5
+    if some_number >= 5:
+            well_is_it = True
+    else:
+            well_is_it = False
+    
     return well_is_it
 
 
 def take_five(some_number) -> int:
-    """Subtracts 5 from some_number."""
-    return some_number - 5
+    x = some_number - 5
+    return x
 
 
 def greet(name="Towering Timmy"):
@@ -40,7 +44,8 @@ def greet(name="Towering Timmy"):
     return a string of "Hello " and the name argument.
     E.g. if given as "Towering Timmy" it should return "Hello Towering Timmy"
     """
-    return f"Hello {name}"
+    greeting_thing = "Hello" + "," + name
+    return greeting_thing
 
 
 def three_counter(input_list=[1, 4, 3, 5, 7, 1, 3, 2, 3, 3, 5, 3, 7]):
@@ -178,11 +183,11 @@ def make_filler_text_dictionary():
 
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
     wd = {}
-    for i in range(3, 8):
+    for i in range(3, 8,1):
         wd[i] = []
         for _ in range(3):
             r = requests.get(url + str(i))
-            wd[i].append(r.text)
+            wd[i].append(r)
 
     return wd
 
@@ -199,12 +204,12 @@ def random_filler_text(number_of_words=200):
     """
     import random
 
-    my_dick = make_filler_text_dictionary()
+    my_dict = make_filler_text_dictionary()
     words = []
     for _ in range(number_of_words):
         word_length = random.randint(3, 6)
         word_index = random.randint(0, 2)
-        words.append(my_dick[word_length][word_index])
+        words.append(my_dict[word_length][word_index])
 
     return " ".join(words)
 
